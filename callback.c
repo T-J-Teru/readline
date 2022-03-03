@@ -127,7 +127,7 @@ void
 rl_callback_read_char (void)
 {
   char *line;
-  int eof, jcode;
+  int eof = 0, jcode;
   static procenv_t olevel;
 
   if (rl_linefunc == NULL)
@@ -260,6 +260,8 @@ rl_callback_read_char (void)
 	}
       else
 	eof = readline_internal_char ();
+
+      rl_eof_found = eof;
 
       RL_CHECK_SIGNALS ();
       if (rl_done == 0 && _rl_want_redisplay)

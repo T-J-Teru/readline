@@ -692,7 +692,7 @@ rl_deprep_terminal (void)
   if (terminal_prepped & TPX_BRACKPASTE)
     {
       fprintf (rl_outstream, BRACK_PASTE_FINI);
-      if (_rl_eof_found)
+      if (rl_eof_found)
  	fprintf (rl_outstream, "\n");
     }
 

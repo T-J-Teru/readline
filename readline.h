@@ -553,6 +553,10 @@ extern int rl_mark;
    line and should return it. */
 extern int rl_done;
 
+/* Flag to indicate that readline has encountered EOF at the end of the
+   current input line.  */
+extern int rl_eof_found;
+
 /* If set to a character value, that will be the next keystroke read. */
 extern int rl_pending_input;
 

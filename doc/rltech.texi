@@ -325,6 +325,13 @@ Setting this to a non-zero value causes Readline to return the current
 line immediately.
 @end deftypevar
 
+@deftypevar int rl_eof_found
+Set to a non-zero value if readline encountered @code{EOF}, zero
+otherwise.  Application functions can test this to discover if the
+user has sent @code{EOF}.
+
+@end deftypevar
+
 @deftypevar int rl_num_chars_to_read
 Setting this to a positive value before calling @code{readline()} causes
 Readline to return after accepting that many characters, rather

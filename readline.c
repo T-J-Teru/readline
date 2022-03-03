@@ -218,8 +218,8 @@ int _rl_eof_char = CTRL ('D');
 /* Non-zero makes this the next keystroke to read. */
 int rl_pending_input = 0;
 
-/* If non-zero when readline_internal returns, it means we found EOF */
-int _rl_eof_found = 0;
+/* Non-zero when EOF is found at the end of the input line. */
+int rl_eof_found = 0;
 
 /* Pointer to a useful terminal name. */
 const char *rl_terminal_name = (const char *)NULL;
@@ -703,8 +703,8 @@ static char *
 readline_internal (void)
 {
   readline_internal_setup ();
-  _rl_eof_found = readline_internal_charloop ();
-  return (readline_internal_teardown (_rl_eof_found));
+  rl_eof_found = readline_internal_charloop ();
+  return (readline_internal_teardown (rl_eof_found));
 }
 
 void
